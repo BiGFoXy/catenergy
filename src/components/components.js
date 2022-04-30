@@ -1,3 +1,16 @@
 import './normalize.scss'
 import './reset.scss'
 import './fonts.scss'
+import './ui/scss/header.scss'
+import './ui/scss/footer.scss'
+import './ui/assets/logo-desktop.svg'
+import './ui/assets/logo-tablet.svg'
+import './ui/assets/logo-mobile_img.svg'
+import './ui/assets/logo-mobile_text.svg'
+import './ui/assets/footer-logo.svg'
+import './ui/assets/footer-vk.svg'
+import './ui/assets/footer-fb.svg'
+import './ui/assets/footer-inst.svg'
+import './ui/assets/footer-copyright.svg'
+require('./ui/scripts/map.js')
+require('./ui/scripts/menu.js')

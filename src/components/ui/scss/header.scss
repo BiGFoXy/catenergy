@@ -1,0 +1,161 @@
+.container {
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    margin-top: 54px;
+    margin-bottom: 74px;
+    display: flex;
+    justify-content: space-between;
+
+    &__links {
+        display: flex;
+        width: 478px;
+        justify-content: space-between;
+        font-size: 20px;
+        align-items: center;
+        line-height: 30px;
+
+        &-item {
+
+            a {
+                display: block;
+                padding-bottom: 8px;
+                padding-top: 14px;
+                color: black;
+            }
+        }
+    }
+
+    &__logo-tablet {
+        display: none;
+    }
+
+    &__logo-mobile {
+        display: none;
+    }
+
+    #menu__toggle {
+        visibility: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        &:checked + .menu__btn > span {
+            transform: rotate(45deg);
+
+            &::after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+
+            &::before {
+                top: 0;
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    .menu__btn {
+        display: none;
+        position: relative;
+        cursor: pointer;
+        padding: 7px 0 0 0;
+
+        & > span, 
+        & > span::before,
+        & > span::after {
+            display: inline-block;
+            width: 24px;
+            height: 2px;
+            background-color: black;
+            transition-duration: .25s;
+        }   
+
+        & > span {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -8px;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 8px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .header {
+        margin-top: 24px;
+        margin-right: 29px;
+        margin-left: 30px;
+
+
+        &__links {
+            max-width: 440px;
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        &__logo-desktop {
+            display: none;
+        }
+
+        &__logo-tablet {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 675px) {
+    .header {
+        padding-top: 11px;
+        margin: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 17px;
+        background-color: white;
+        position: relative;
+
+        &__links {
+            display: none;
+            font-size: 14px;
+            width: 100%;
+            line-height: 20px;
+            position: absolute;
+            top: 56px;
+            right: 0;
+            flex-direction: column;
+            background-color: white;
+            z-index: 1;
+
+            & &-item a {
+                color: black;
+            }
+        }
+
+        &__logo-tablet {
+            display: none;
+        }
+
+        &__logo-mobile {
+            display: block;
+        }
+
+        .menu__btn {
+            display: block;
+        }
+    }
+}
+
+.visible {
+    display: flex;
+}
