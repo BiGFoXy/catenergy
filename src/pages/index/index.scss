@@ -56,7 +56,8 @@ body .header {
     }
 
     &__img-desktop {
-        padding-right: 150px;
+        position: relative;
+        right: 90px;
     }
 
     &__img-tablet {
@@ -215,6 +216,11 @@ body .header {
         width: 436px;
     }
 
+    .second-cont {
+        display: flex;
+        justify-content: space-around;
+    }
+
     &__title {
         font-size: 60px;
         line-height: 60px;
@@ -275,9 +281,14 @@ body .header {
     }
 
     &__result {
+        width: 100%;
+
         .img-cont {
             position: relative;
-            width: 703px;
+            max-width: 703px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
             height: 550px;
             margin-top: -80px;
         }
@@ -379,7 +390,7 @@ body .header {
         @mixin selector-thumb {
             background-color: #68B738;
             height: 6px;
-            width: 35px;
+            width: 50%;
             border-radius: 6px;   
         }
 
@@ -388,7 +399,7 @@ body .header {
             -webkit-appearance: none;
             background: transparent;
             cursor: pointer;
-            max-width: 84px;
+            max-width: 50%;
             width: 100%;
 
             &::-webkit-slider-runnable-track {
@@ -415,7 +426,7 @@ body .header {
 
 @media (max-width: 1000px) {
     body .container {
-        max-width: 708px;
+        max-width: 90%;
     }
 
     .header {
@@ -472,6 +483,7 @@ body .header {
 
         &__card {
             width: 100%;
+            max-width: 100%;
             padding-top: 0;
             grid-template-columns: 377px 1fr;
             grid-template-rows: 36px 100px 1fr;
@@ -491,8 +503,8 @@ body .header {
             }
 
             .first-cont {
-                width: 200px;
-                height: 200px;
+                width: 20vw;
+                height: 20vw;
                 grid-column: 2;
                 grid-row: span 4;
                 align-self: center;
@@ -501,13 +513,13 @@ body .header {
             }
 
             .img-cat {
-                width: 140px;
-                height: 192px;
+                width: 30vw;
+                height: 30vw;
             }
 
             .img-tiger {
-                width: 268px;
-                height: 112px;
+                width: 30vw;
+                height: 30vw;
             }
 
             &:first-of-type {
@@ -527,7 +539,7 @@ body .header {
         }
 
         &__card {
-            min-width: 230px;
+            min-width: 28vw;
         
             &:nth-of-type(3),
             &:nth-of-type(4) {
@@ -546,6 +558,12 @@ body .header {
 
         .img-cont {
             margin-top: 40px;
+            width: 70vw;
+            height: 55vw;
+        }
+
+        .img {
+            background-size: 70vw 100%;
         }
 
         .first-cont {
@@ -575,14 +593,14 @@ body .header {
                 margin-left: 0;
             }
         }
+
+        &__feature:first-of-type {
+            margin-right: 0;
+        }
     }
 }
 
 @media (max-width: 675px) {
-    body .container {
-        max-width: 280px;
-    }
-
     body .header {
         margin-bottom: 0;
     }
@@ -620,10 +638,12 @@ body .header {
 
         &::before {
             display: block;
-            width: 320px;
+            width: 100%;
             top: 0;
+            left: 0;
             height: 305px;
-            background: url("./assets/index-background-mobile.png") no-repeat;
+            background: url("./assets/index-background-mobile.png") no-repeat 50% 50%,
+            linear-gradient(to right, #65A93C 50%, #63A73A 0%);
         }
 
         &__img-tablet {
@@ -637,10 +657,9 @@ body .header {
 
     .features {
         & &__card {
-            display: grid;
+            max-width: 100%;
             grid-template-columns: 50px 84px 1fr;
-            grid-template-rows: 53px 90px 1fr;
-            width: 100%;
+            grid-template-rows: 53px 1fr 50px;
             padding: 21px 20px 18px;
             column-gap: 20px;
             row-gap: 19px;
@@ -792,14 +811,14 @@ body .header {
 
         .second-cont {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             grid-column: span 2;
         }
 
         &__result {
             .img-cont {
-                width: 280px;
-                height: 232px;
+                width: 100%;
+                height: auto;
 
                 .scroll-content {
                     display: flex;
@@ -807,12 +826,13 @@ body .header {
             }
 
             .img {
-                height: 232px;
+                max-height: 80vw;
+                height: 80vw;
                 background-repeat: no-repeat;
-                background-size: 280px 100%;
+                background-size: 100% 100%;
+                background-position: 50% 50%;
                 position: static;
                 flex-shrink: 0;
-                scroll-snap-align: start;
             }
 
             .slider-text {

@@ -100,7 +100,7 @@
 
 
         &__links {
-            max-width: 440px;
+            width: 440px;
             font-size: 18px;
             line-height: 24px;
         }
@@ -116,9 +116,10 @@
 }
 
 @media (max-width: 675px) {
-    .header {
+    body .header {
         padding-top: 11px;
         margin: 0;
+        max-width: 100%;
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 17px;
@@ -156,6 +157,6 @@
     }
 }
 
-.visible {
+body .visible {
     display: flex;
 }

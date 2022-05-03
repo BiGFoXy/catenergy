@@ -1,5 +1,5 @@
 window.onload = function() {
-  if (document.body.clientWidth <= 768) {
+  if (document.body.clientWidth <= 1000) {
     var center =  { lat: 57.9402798169903, lng: 55.74189799731668 };
    } else {
     var center =  { lat: 57.940541745432775, lng: 55.72930234477478 };
