@@ -1,0 +1,5 @@
+@mixin selected($num, $color: #68B738) {
+    &:nth-of-type(#{$num}) {
+        border-bottom: 2px solid $color;
+    }
+}

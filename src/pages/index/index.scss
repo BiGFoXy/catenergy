@@ -1,3 +1,5 @@
+@use "../../components/_mixins" as *;
+
 body {
     font-family: Oswald, Arial, Helvetica;
 }
@@ -11,9 +13,7 @@ body .header {
                 color: white;
             }
 
-            &:nth-of-type(1) {
-                border-bottom: 2px solid white;
-            }
+            @include selected(1, white);
         }
 
     }
@@ -281,6 +281,7 @@ body .header {
     }
 
     &__result {
+        max-width: 60%;
         width: 100%;
 
         .img-cont {
@@ -313,7 +314,7 @@ body .header {
 
         .slider-cont {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             margin-top: 27px;
         }
@@ -436,9 +437,7 @@ body .header {
                     color: black;
                 }
 
-                &:nth-of-type(1) {
-                    border-color: #68B738;
-                }
+                @include selected(1);
             }
         }
     }
