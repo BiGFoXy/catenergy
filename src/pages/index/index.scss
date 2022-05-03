@@ -593,6 +593,10 @@ body .header {
             }
         }
 
+        &__result {
+            max-width: 100%;
+        }
+
         &__feature:first-of-type {
             margin-right: 0;
         }
