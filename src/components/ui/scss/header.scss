@@ -93,10 +93,15 @@
 }
 
 @media (max-width: 1000px) {
+    body .container {
+        max-width: 90%;
+    }
+
     .header {
         margin-top: 24px;
         margin-right: 29px;
         margin-left: 30px;
+        margin-bottom: 30px;
 
 
         &__links {
@@ -125,6 +130,7 @@
         padding-bottom: 17px;
         background-color: white;
         position: relative;
+        border-bottom: 1px solid #D9D9D9;
 
         &__links {
             display: none;
@@ -136,10 +142,16 @@
             right: 0;
             flex-direction: column;
             background-color: white;
-            z-index: 1;
+            z-index: 2;
 
-            & &-item a {
-                color: black;
+            &-item {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #CDCDCD;
+
+                a {
+                    padding-bottom: 14px;
+                }
             }
         }
 
@@ -149,6 +161,8 @@
 
         &__logo-mobile {
             display: block;
+            margin-top: auto;
+            margin-bottom: auto;
         }
 
         .menu__btn {

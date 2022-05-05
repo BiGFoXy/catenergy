@@ -1,12 +1,7 @@
 @use "../../components/_mixins" as *;
 
-body {
-    font-family: Oswald, Arial, Helvetica;
-}
-
 body .header {
     margin-bottom: 30px;
-    
     &__links {
         &-item {
             a {
@@ -15,7 +10,6 @@ body .header {
 
             @include selected(1, white);
         }
-
     }
 }
 
@@ -114,7 +108,7 @@ body .header {
 
         &-desc {
             grid-column: span 2;
-            font-family: Arial, Helvetica;
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 16px;
             line-height: 24px;
             font-weight: 400;
@@ -177,7 +171,7 @@ body .header {
         }
 
         &-desc {
-            font-family: Arial, Helvetica;
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 16px;
             line-height: 24px;
             margin-bottom: 57px;
@@ -228,7 +222,7 @@ body .header {
     }
     
     &__desc {
-        font-family: Arial, Helvetica;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
         line-height: 24px;
         margin-bottom: 69px;
@@ -261,7 +255,7 @@ body .header {
             transform: translate(-50%, 50%);
             bottom: 0;
             white-space: nowrap;
-            font-family: Arial;
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 14px;
             line-height: 14px;
             padding: 5px 8px;
@@ -426,10 +420,6 @@ body .header {
 }
 
 @media (max-width: 1000px) {
-    body .container {
-        max-width: 90%;
-    }
-
     .header {
         &__links {
             & &-item {
@@ -601,11 +591,19 @@ body .header {
             margin-right: 0;
         }
     }
+
+    body .footer {
+        .map {
+            &__invitation {
+                background-color: white;
+            }
+        }
+    }
 }
 
 @media (max-width: 675px) {
-    body .header {
-        margin-bottom: 0;
+    html body .header {
+        border-bottom: none;
     }
 
     .index {

@@ -1,0 +1,13 @@
+require('../../components/components.js')
+import './index.scss'
+import './assets/catalog-1.png'
+import './assets/catalog-2.png'
+import './assets/catalog-3.png'
+import './assets/catalog-4.png'
+import './assets/catalog-5.png'
+import './assets/catalog-6.png'
+import './assets/catalog-7.png'
+import './assets/gift-photo-desktop.png'
+import './assets/gift-photo-mobile.png'
+import './assets/gift-photo-tablet.png'
+import './assets/icon-gift.svg'

@@ -96,10 +96,15 @@
             }
 
             &__invitation {
+                background-color: #F2F2F2;
                 position: relative;
                 top: 0;
                 left: 0;
                 width: 100%;
+
+                &-desc {
+                    text-align: end;
+                }
             }
         }
 
@@ -141,6 +146,7 @@
                     font-size: 14px;
                     line-height: 20px;
                     width: 140px;
+                    text-align: start;
 
                     &_city::before {
                         content: "";
