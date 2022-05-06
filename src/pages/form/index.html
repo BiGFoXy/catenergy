@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <%=require("html-loader!../../components/ui/header.html").default%>
+    <main>
+        <form action="#" method="post" name="form">
+            <section class="primary container">
+                <h2 class="primary__title">Подбор программы</h2>
+                <p class="primary__desc">ЗАПОЛНИТЕ АНКЕТУ, И МЫ ПОДБЕРЕМ ПРОГРАММУ ПИТАНИЯ ДЛЯ ВАШЕГО КОТА</p>
+                <div class="primary__inputs">
+                    <div class="left-inputs">
+                        <div class="primary__inputs-input">
+                            <label for="name">ИМЯ:*</label>
+                            <input required type="text" name="name" id="name" placeholder="БАРСИК">
+                        </div>
+                        <div class="primary__inputs-input">
+                            <label for="weight">ВЕС (КГ):*</label>
+                            <input required type="number" name="weight" id="weight" placeholder="7">
+                        </div>
+                        <div class="primary__inputs-input">
+                            <label for="age">ВОЗРАСТ (ЛЕТ):*</label>
+                            <input required type="number" name="age" id="age" placeholder="7">
+                        </div>
+                    </div>
+                    <div class="right-inputs">
+                        <div class="primary__inputs-input-2">
+                            <input type="radio" name="cause" id="cause-1" checked>
+                            <label for="cause-1">ПОХУДЕНИЕ</label>
+                        </div>
+                        <div class="primary__inputs-input-2">
+                            <input type="radio" name="cause" id="cause-2">
+                            <label for="cause-2">НАБОР МАССЫ</label>
+                        </div>
+                        <div class="primary__inputs-input-2">
+                            <input type="radio" name="cause" id="cause-3">
+                            <label for="cause-3">НЕ ЗНАЮ (НУЖЕН ВАШ СОВЕТ)</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="contact">
+                <div class="container">
+                    <h3 class="contact__title">Контактные данные (владельца кота)</h3>
+                    <div class="contact__inputs">
+                        <div class="contact__inputs-input">
+                            <label for="email">E-MAIL:*</label>
+                            <input required type="email" name="email" id="email" placeholder="KUKLACHEV@GMAIL.COM">
+                            <img class="contact__inputs-input-img" src=<%=require("./assets/icon-email.svg")%> alt="email">
+                        </div>
+                        <div class="contact__inputs-input">
+                            <label for="phone">ТЕЛЕФОН:*</label>
+                            <input required type="tel" name="phone" id="phone" placeholder="8(960)900-60-90">
+                            <img class="contact__inputs-input-img" src=<%=require("./assets/icon-phone.svg")%> alt="phone">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="comment">
+                <div class="container">
+                    <h3 class="comment__title">Комментарий</h2>
+                    <textarea class="comment__area" name="comment" id="comment" cols="30" rows="10" placeholder="РАССКАЖИТЕ ОБО ВСЕХ ПОВАДКАХ КОТА"></textarea>
+                </div>
+            </section>
+            <section class="extra">
+                <div class="container">
+                    <h3 class="extra__title">Дополнительно</h3>
+                    <div class="extra__inputs">
+                        <div class="extra__inputs-input">
+                            <input type="checkbox" name="sugar" id="addon-1" checked>
+                            <label for="addon-1">САХАРОЗАМЕНИТЕЛЬ</label>
+                        </div>
+                        <div class="extra__inputs-input">
+                            <input type="checkbox" name="water" id="addon-2">
+                            <label for="addon-2">ПИТЬЕВАЯ ВОДА</label>
+                        </div>
+                        <div class="extra__inputs-input">
+                            <input type="checkbox" name="milk" id="addon-3">
+                            <label for="addon-3">МОЛОКО</label>
+                        </div>
+                        <div class="extra__inputs-input">
+                            <input type="checkbox" name="vitamins" id="addon-4">
+                            <label for="addon-4">ВИТАМИНЫ</label>
+                        </div> 
+                        <input class="submit" type="submit" value="ОТПРАВИТЬ ЗАЯВКУ">
+                        <div class="info">* — Обязательные поля</div>
+                    </div> 
+                </div>
+            </section>
+        </form>
+    </main>
+    <%=require("html-loader!../../components/ui/footer.html").default%>
+</body>
+</html>

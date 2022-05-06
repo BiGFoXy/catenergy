@@ -1,0 +1,513 @@
+@use "../../components/_mixins.scss" as *;
+
+body .header {
+    &__links {
+        &-item {
+            @include selected(3);
+        }
+    }
+}
+
+@mixin line($top: 22px, $padding: 35px) {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        top: $top;
+        width: 100%;
+        height: 2px;
+        background-color: #68B738;
+        z-index: -1;
+    }
+
+    &__title {
+        position: relative;
+        display: inline-block;
+
+        &::before {
+            content: "";
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            background-color: white;
+            height: 100%;
+            z-index: -1;
+            padding-left: 40px;
+            padding-right: $padding;
+            box-sizing: content-box;
+        }
+    }
+}
+
+@mixin input ($width: 100%){
+    max-width: 100%;
+    width: $width;
+    font-size: 20px;
+    line-height: 30px;
+    color: #444444;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    label {
+        margin-right: 14px;
+    }
+
+    input {
+        border: 1px solid #E7E7E7;
+        padding: 11px 20px;
+        line-height: 30px;
+        width: 100%;
+
+        &:focus {
+            border: 1px solid black;
+        }
+    }
+}
+
+.primary {
+    &__title {
+        font-size: 60px;
+        line-height: 60px;
+        margin-bottom: 56px;
+    }
+
+    &__desc {
+        font-size: 20px;
+        line-height: 30px;
+        width: 323px;
+        margin-bottom: 66px;
+    }
+
+    &__inputs {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-input {
+            @include input(569px);
+            margin-bottom: 20px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &-input-2 {
+            font-size: 20px;
+            line-height: 30px;
+            height: 40px;
+            margin-bottom: 15px;
+            color: #222222;
+            display: flex;
+            align-items: center;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            label {
+                margin-left: 20px;
+            }
+
+            input {
+                -webkit-appearance: none;
+                appearance: none;
+                background-color: #fff;
+                margin: 0;
+                font-family: inherit;
+                color: #CDCDCD;
+                width: 40px;
+                height: 40px;
+                border: 1px solid #CDCDCD;
+                border-radius: 50%;
+
+                display: grid;
+                place-content: center;
+
+                &::before {
+                    content: "";
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    transform: scale(0);
+                    transition: 120ms transform ease-in-out;
+                    box-shadow: inset 1em 1em #68B738;
+                }
+
+                &:checked::before {
+                    transform: scale(1);
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    border: 1px solid black;
+                }
+            }
+        }
+    }
+
+    .right-inputs {
+        max-width: 100%;
+        width: 570px;
+        height: 202px;
+        border: 1px solid #E7E7E7;
+        padding: 27px 28px 27px 28px;
+    }
+}
+
+.contact {
+    margin-top: 69px;
+
+    @include line;
+
+    &__title {
+        font-size: 36px;
+        line-height: 36px;
+        margin-bottom: 76px;
+    }
+
+    &__inputs {
+        display: flex;
+        justify-content: space-between;
+
+        &-input {
+            @include input(569px);
+            position: relative;
+
+            &-img {
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+                right: 20px;
+            }
+        }
+    }
+}
+
+.comment {
+    margin-top: 67px;
+    @include line;
+
+    &__title {
+        font-size: 36px;
+        line-height: 36px;
+        margin-bottom: 76px;
+    }
+
+    &__area {
+        display: block;
+        width: 100%;
+        border: 1px solid #E7E7E7;
+        padding: 10px 19px;
+        color: #444444;
+        font-size: 20px;
+        line-height: 30px;
+        resize: none;
+        height: 174px;
+
+        &:focus {
+            border: 1px solid black;
+        }
+    }
+}
+
+.extra {
+    margin-top: 67px;
+    margin-bottom: 82px;
+
+    @include line;
+
+    &__title {
+        font-size: 36px;
+        line-height: 36px;
+        margin-bottom: 57px;
+    }
+
+    &__inputs {
+        display: grid;
+        align-items: center;
+        row-gap: 61px;
+        grid-template-columns: repeat(4, 1fr);
+
+        &-input {
+            font-size: 20px;
+            line-height: 30px;
+            display: flex;
+            align-items: center;
+
+            label {
+                margin-left: 19px;
+            }
+
+            input {
+                -webkit-appearance: none;
+                appearance: none;
+                background-color: #fff;
+                margin: 0;
+                font-family: inherit;
+                color: currentColor;
+                width: 40px;
+                height: 40px;
+                border: 1px solid #CDCDCD;
+
+                display: grid;
+                place-content: center;
+
+                &::before {
+                    content: "";
+                    width: 18px;
+                    height: 14px;
+                    transform: scale(0);
+                    transition: 120ms transform ease-in-out;
+                    box-shadow: inset 1em 1em #68B738;
+
+                    clip-path: polygon(38% 79%, 87% 9%, 98% 17%, 39% 100%, 0 65%, 8% 54%)
+                }
+
+                &:checked::before {
+                    transform: scale(1);
+                }
+                
+                &:hover {
+                    cursor: pointer;
+                    border: 1px solid black;
+                }
+            }
+        }
+
+        .submit {
+            background-color: #68B738;
+            color: white;
+            font-size: 20px;
+            line-height: 20px;
+            padding: 13px 0;
+            max-width: 100%;
+            width: 569px;
+            grid-column: span 2;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .info {
+            font-size: 16px;
+            line-height: 16px;
+            grid-column: 3;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .primary {
+        margin-top: 64px;
+
+        &__inputs {
+            flex-direction: column;
+
+            &-input {
+                @include input;
+            }
+        }
+
+        .left-inputs {
+            width: 100%;
+        }
+
+        .right-inputs {
+            margin-top: 72px;
+            width: 100%;
+        }
+    }
+
+    .contact {
+        &__inputs {
+            flex-direction: column;
+
+            &-input {
+                @include input;
+
+                &:last-of-type {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    .extra {
+        margin-bottom: 72px;
+
+        &__inputs {
+            grid-template-columns: 45% 45%;
+            grid-template-rows: 40px 40px 1fr;
+            column-gap: 61px;
+            row-gap: 32px;
+
+            .submit {
+                margin-top: 22px;
+                grid-column: span 1;
+            }
+
+            .info {
+                grid-column: 2;
+            }
+        }
+    }
+}
+
+@media(max-width: 675px) {
+    html body .primary {
+        max-width: 100%;
+        margin-top: 27px;
+
+        &__title {
+            padding-left: 5%;
+            padding-right: 5%;
+            font-size: 36px;
+            line-height: 36px;
+            margin-bottom: 37px;
+        }
+
+        &__desc {
+            padding-left: 5%;
+            padding-right: 5%;
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 39px;
+        }
+
+        &__inputs {
+            &-input {
+                font-size: 16px;
+                line-height: 18px;
+                margin-bottom: 14px;
+
+                input {
+                    height: 45px;
+                    padding: 14px 15px;
+                }
+            }
+
+            &-input-2 {
+                font-size: 16px;
+                line-height: 18px;
+
+                label {
+                    margin-left: 15px;
+                }
+
+                input {
+                    width: 30px;
+                    height: 30px; 
+
+                    &::before {
+                        height: 14px;
+                        width: 14px;
+                    } 
+                }
+            }
+
+            .left-inputs {
+                padding-left: 5%;
+                padding-right: 5%;
+                margin-bottom: 24px;
+            }
+
+            .right-inputs {
+                margin-top: 0;
+                padding: 20px 5%;   
+                border-right: none;
+                border-left: none;  
+            }
+        }   
+    }
+
+    .contact {
+        @include line(16px, 15px);
+        margin-top: 26px;
+
+        &__inputs {
+            &-input {
+                font-size: 16px;
+                line-height: 18px;
+                
+                input {
+                    height: 45px;
+                    padding: 14px 15px;
+                }
+            }
+        }
+
+        &__title {
+            margin-right: 60px;
+            font-size: 24px;
+            line-height: 26px;
+            margin-bottom: 32px;
+        }
+    }
+
+    .comment {
+        margin-top: 27px;
+
+        @include line(16px, 15px);
+
+        &__title {
+            font-size: 24px;
+            line-height: 26px;
+            margin-bottom: 34px;
+        }
+
+        &__area {
+            font-size: 16px;
+            line-height: 18px;
+            padding: 13px 15px;
+        }
+    }
+
+    .extra {
+        margin-top: 27px;
+        margin-bottom: 32px;
+        @include line(16px, 15px);
+
+        &__title {
+            font-size: 24px;
+            line-height: 26px;   
+            margin-bottom: 34px;
+        }
+
+        &__inputs {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 30px) 1fr 16px;
+            row-gap: 13px;
+
+            &-input {
+                font-size: 16px;
+                line-height: 18px;
+
+                input {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            .submit {
+                margin-top: 21px;
+                width: 100%;
+            }
+
+            .info {
+                margin-top: 8px;
+                font-size: 14px;
+                grid-column: 1;
+                justify-self: center;
+            }
+        }
+    }
+}
